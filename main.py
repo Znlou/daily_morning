@@ -10,15 +10,15 @@ import re
 nowtime = datetime.utcnow() + timedelta(hours=8)  # 东八区时间
 today = datetime.strptime(str(nowtime.date()), "%Y-%m-%d") #今天的日期
 
-start_date = os.getenv('2022-10-1')
-city = os.getenv('镇江')
+start_date = os.getenv('START_DATE')
+city = os.getenv('city')
 birthday = os.getenv('BIRTHDAY')
 
-app_id = os.getenv('wx3af20a89551eef69')
-app_secret = os.getenv('c65d7236e975ed7ad9150bb74e8e3aff')
+app_id = os.getenv('APP_ID')
+app_secret = os.getenv('APP_SECRET')
 
-user_ids = os.getenv('o0Mxv6T7l9EC2sOd2jWwtXN1DJN4', '').split("\n")
-template_id = os.getenv('bcFhH7dS95p95KxhJsOpWhjy9xIclghGUOJb18eCBc8')
+user_ids = os.getenv('USER_ID', '').split("\n")
+template_id = os.getenv('TEMPLATE_ID')
 
 if app_id is None or app_secret is None:
   print('请设置 APP_ID 和 APP_SECRET')
